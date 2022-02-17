@@ -18,7 +18,7 @@ const AddControlBtn = () => {
         }}
         onClick={() => count >= 1 && setCount(prevCount => prevCount - 1)}
       >
-        <RemoveIcon sx={{ color: "white" }} />
+        <RemoveIcon sx={{ color: "white", position: "absolute" }} />
       </IconButton>
       <span>{count}</span>
       <IconButton
@@ -31,7 +31,7 @@ const AddControlBtn = () => {
         }}
         onClick={() => setCount(prevCount => prevCount + 1)}
       >
-        <AddIcon sx={{ color: "white" }} />
+        <AddIcon sx={{ color: "white", position: "absolute" }} />
       </IconButton>
     </Box>
   );

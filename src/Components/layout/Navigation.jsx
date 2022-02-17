@@ -8,11 +8,17 @@ import {
   Toolbar,
   Menu,
   MenuItem,
+  Badge,
   useScrollTrigger,
+  IconButton,
+  Slide,
 } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
+import { useMediaQuery } from "react-responsive";
 import { BurgerMenu } from "../utilities/index";
+import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -64,6 +70,7 @@ const NavItems = [
 ];
 
 const Navigation = ({ window }) => {
+  const isMobile = useMediaQuery({ maxWidth: "500px" });
   const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenUserMenu = event => {
@@ -75,11 +82,35 @@ const Navigation = ({ window }) => {
   };
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 0,
+    threshold: 110,
     target: window ? window() : undefined,
   });
   return (
     <>
+      <Box
+        sx={{
+          bgcolor: "black",
+          width: "100%",
+          height: "50px",
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
+        }}
+      >
+        <Link to="#" style={{ textDecoration: "none" }}>
+          <Typography
+            sx={{
+              textTransform: "uppercase",
+              fontWeight: 500,
+              fontSize: "16px",
+              color: "white",
+            }}
+            mr="25px"
+          >
+            login/signup
+          </Typography>
+        </Link>
+      </Box>
       <Grid
         container
         flexDirection={{ xs: "column", sm: "row" }}
@@ -109,6 +140,7 @@ const Navigation = ({ window }) => {
           />
         </Search>
       </Grid>
+
       <AppBar
         elevation={1}
         position="relative"
@@ -120,18 +152,80 @@ const Navigation = ({ window }) => {
           position: trigger && "sticky",
           top: 0,
           zIndex: 1,
+          transition: "all 1s ease",
         }}
       >
         <Toolbar>
-          <BurgerMenu
-            aria_controls="menu-appbar"
-            aria_haspopup="true"
-            open={Boolean(anchorElUser)}
-            onClick={handleOpenUserMenu}
-          />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <Box mr="15px">
+                <BurgerMenu
+                  aria_controls="menu-appbar"
+                  aria_haspopup="true"
+                  open={Boolean(anchorElUser)}
+                  onClick={handleOpenUserMenu}
+                />
+              </Box>
+              {isMobile || (
+                <Typography
+                  sx={{ textTransform: "uppercase", fontWeight: 500 }}
+                >
+                  Categories
+                </Typography>
+              )}
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {trigger && (
+                <Slide appear={false} in={trigger}>
+                  <Search>
+                    <SearchIconWrapper>
+                      <SearchIcon />
+                    </SearchIconWrapper>
+                    <StyledInputBase
+                      placeholder="Search…"
+                      inputProps={{ "aria-label": "search" }}
+                    />
+                  </Search>
+                </Slide>
+              )}
+
+              <IconButton
+                size="large"
+                aria-label="show 17 new notifications"
+                color="inherit"
+              >
+                <Badge badgeContent={1} color="success">
+                  <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+            </Box>
+          </Box>
           <Box>
             <Menu
-              sx={{ mt: "45px" }}
+              sx={{
+                mt: "45px",
+                left: {
+                  xs: "10px",
+                  sm: "30px",
+                  md: "50px",
+                },
+                "& .MuiPaper-root": {
+                  width: "250px",
+                },
+              }}
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: "top",
@@ -145,8 +239,8 @@ const Navigation = ({ window }) => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {NavItems.map(item => (
-                <MenuItem onClick={handleCloseUserMenu}>
+              {NavItems.map((item, index) => (
+                <MenuItem key={index} onClick={handleCloseUserMenu}>
                   <Typography
                     sx={{
                       textAlign: "center",

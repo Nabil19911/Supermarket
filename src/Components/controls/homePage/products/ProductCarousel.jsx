@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ProductCard from "./ProductCard";
@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 const Arrow = styled.div`
   background: #7caf3c;
-  width: 50px;
+  min-width: 30px;
   height: 400px;
   display: flex;
   justify-content: center;
@@ -35,20 +35,38 @@ const Silders = styled.div`
 
 const ProductCarousel = ({ imagUrl, title, products }) => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [innerWidth, setInnerWidth] = useState(0);
+  const [scrollWidth, setScrollWidth] = useState(0);
+  const innerRef = useRef(null);
+
+  useEffect(() => {
+    setInnerWidth(innerRef.current.getBoundingClientRect());
+    setScrollWidth(innerRef.current.scrollLeft);
+  }, [slideIndex]);
+  console.log(innerWidth);
   const handleClick = () => {
-    setSlideIndex(slideIndex < 7 ? slideIndex + 1 : 0);
+    // if (innerWidth === scrollWidth) return;
+    // currentW += 200;
+    console.log("inner ", Math.round(innerWidth.right));
+    console.log("outer ", scrollWidth);
+
+    // if (innerWidth.right < outerWidth.right) {
+    //   console.log("hi");
+    // }
+    setSlideIndex(slideIndex < 5 ? slideIndex + 1 : 0);
   };
+
   return (
     <Container>
       <Box
         sx={{
           backgroundImage: `url(${imagUrl})`,
-          minWidth: "200px",
+          minWidth: "170px",
           height: "400px",
           borderRadius: "15px 0 0 15px",
         }}
       >
-        <Box sx={{ margin: "25px auto auto 20px", textAlign: "left" }}>
+        <Box sx={{ margin: "25px auto auto 10px", textAlign: "left" }}>
           <Typography
             sx={{
               fontWeight: 700,
@@ -71,17 +89,15 @@ const ProductCarousel = ({ imagUrl, title, products }) => {
         </Box>
       </Box>
       <Wrapper>
-        <Silders slideIndex={slideIndex}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+        <Silders ref={innerRef} slideIndex={slideIndex}>
+          {products.map((items, index) => (
+            <ProductCard
+              key={index}
+              imageUrl={items.imageUrl}
+              title={items.title}
+              price={items.price}
+            />
+          ))}
         </Silders>
       </Wrapper>
       <Arrow onClick={handleClick}>

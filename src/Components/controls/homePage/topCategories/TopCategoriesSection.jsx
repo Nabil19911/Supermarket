@@ -24,7 +24,7 @@ const TopCategoriesSection = () => {
       >
         <Scale>
           <Link to="#">
-            <Image src="\images\TopCategory\F-V-2-.png" />
+            <Image src="\images\TopCategory\F-V-2.png" />
           </Link>
         </Scale>
         <Scale>
@@ -71,7 +71,7 @@ const Scale = ({ children }) => {
       sx={{
         overflow: "hidden",
         borderRadius: "100%",
-        background: "#F5F5F5",
+        background: "#7baf3c18",
       }}
     >
       {children}

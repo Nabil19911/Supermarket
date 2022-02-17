@@ -1,8 +1,7 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
-import React from "react";
 import { AddBtn, AddControlBtn } from "../../../utilities";
 
-const ProductCard = ({ text }) => {
+const ProductCard = ({ imageUrl, title, price }) => {
   return (
     <Card
       sx={{
@@ -16,15 +15,15 @@ const ProductCard = ({ text }) => {
       <CardMedia
         component="img"
         sx={{ width: "200px", padding: "20px" }}
-        image="\images\DealOfTheDay\Silk.png"
-        alt="Paella dish"
+        image={imageUrl}
+        alt={title}
       />
       <Box>
         <CardContent>
           <Typography sx={{ textTransform: "capitalize", fontWeight: 700 }}>
-            Silk Chocolate
+            {title}
           </Typography>
-          <Typography>$250</Typography>
+          <Typography>${price}</Typography>
           <Box
             sx={{
               display: "flex",
