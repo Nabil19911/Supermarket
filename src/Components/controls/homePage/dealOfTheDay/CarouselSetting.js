@@ -37,5 +37,14 @@ export const settings = {
         centerPadding: "17px",
       },
     },
+    {
+      breakpoint: 428,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 800,
+        centerPadding: "0px",
+      },
+    },
   ],
 };

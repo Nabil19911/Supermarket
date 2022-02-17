@@ -21,7 +21,7 @@ const WhatsNewSection = () => {
         }}
       >
         <ItemBox
-          size={isMobile ? "265px" : "550px"}
+          size={isMobile ? "270px" : "550px"}
           imgUrl="\images\WhatsNew\new1.png"
           h1="product title"
           text="lorems"
@@ -77,42 +77,44 @@ const WhatsNewSection = () => {
 
 const ItemBox = ({ size, imgUrl, h1, text, fontSize, imageSize }) => {
   return (
-    <Box
-      sx={{
-        minWidth: size,
-        height: "200px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between",
-        boxShadow: "0 0 10px -5px black",
-        position: "relative",
-      }}
-    >
-      <ProductImage imageSize={imageSize} src={imgUrl} />
-      <Box sx={{ paddingTop: "50px" }}>
-        <Typography
-          sx={{
-            fontSize: fontSize,
-            textTransform: "uppercase",
-            fontWeight: 700,
-            color: "#7caf3c",
-          }}
-          mb="10px"
-        >
-          {h1}
-        </Typography>
-        <Typography
-          sx={{
-            textTransform: "capitalize",
-            fontWeight: 500,
-            fontSize: "18px",
-          }}
-          mb="10px"
-        >
-          {text}
-        </Typography>
-        <Buy />
+    <Box sx={{ height: { xs: size, sm: "270px", lg: "auto" } }}>
+      <Box
+        sx={{
+          minWidth: size,
+          height: "200px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "space-between",
+          boxShadow: "0 0 10px -5px black",
+          position: "relative",
+        }}
+      >
+        <ProductImage imageSize={imageSize} src={imgUrl} />
+        <Box sx={{ paddingTop: "50px" }}>
+          <Typography
+            sx={{
+              fontSize: fontSize,
+              textTransform: "uppercase",
+              fontWeight: 700,
+              color: "#7caf3c",
+            }}
+            mb="10px"
+          >
+            {h1}
+          </Typography>
+          <Typography
+            sx={{
+              textTransform: "capitalize",
+              fontWeight: 500,
+              fontSize: "18px",
+            }}
+            mb="10px"
+          >
+            {text}
+          </Typography>
+          <Buy />
+        </Box>
       </Box>
     </Box>
   );

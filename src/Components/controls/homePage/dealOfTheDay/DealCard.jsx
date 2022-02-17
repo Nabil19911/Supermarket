@@ -40,7 +40,6 @@ const DealCard = () => {
           </Typography>
           <Box mt="10px">
             <AddControlBtn />
-            <AddBtn />
           </Box>
         </CardContent>
       </Box>

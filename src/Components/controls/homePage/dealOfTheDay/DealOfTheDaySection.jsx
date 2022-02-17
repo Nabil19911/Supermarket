@@ -71,46 +71,54 @@ class CustomArrowCarousel extends Component {
   render() {
     return (
       <Section>
-        <Grid
-          container
-          alignItems={"center"}
-          justifyContent={{ xs: "center", sm: "space-between" }}
-        >
-          <Heading>Deal of the day</Heading>
-          <Arrows
-            isMobile={this.state.isMobile}
-            previous={this.previous}
-            next={this.next}
-          />
-        </Grid>
         <Box
           sx={{
-            width: {
-              sm: "100%",
-              md: "90%",
-            },
-            margin: " 50px auto auto auto",
-            maxWidth: "1230px",
+            background: "white",
+            padding: "30px",
+            borderRadius: "15px",
           }}
         >
-          <Slider ref={c => (this.slider = c)} {...settings}>
-            <CustomSlide>1</CustomSlide>
-            <CustomSlide>2</CustomSlide>
-            <CustomSlide>3</CustomSlide>
-            <CustomSlide>4</CustomSlide>
-          </Slider>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "20px",
-            }}
+          <Grid
+            container
+            alignItems={"center"}
+            justifyContent={{ xs: "center", sm: "space-between" }}
           >
+            <Heading>Deal of the day</Heading>
             <Arrows
-              isMobile={!this.state.isMobile}
+              isMobile={this.state.isMobile}
               previous={this.previous}
               next={this.next}
             />
+          </Grid>
+          <Box
+            sx={{
+              width: {
+                sm: "100%",
+                md: "90%",
+              },
+              margin: " 50px auto auto auto",
+              maxWidth: "1230px",
+            }}
+          >
+            <Slider ref={c => (this.slider = c)} {...settings}>
+              <CustomSlide>1</CustomSlide>
+              <CustomSlide>2</CustomSlide>
+              <CustomSlide>3</CustomSlide>
+              <CustomSlide>4</CustomSlide>
+            </Slider>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <Arrows
+                isMobile={!this.state.isMobile}
+                previous={this.previous}
+                next={this.next}
+              />
+            </Box>
           </Box>
         </Box>
       </Section>

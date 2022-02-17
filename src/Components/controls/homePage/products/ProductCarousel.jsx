@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ProductCard from "./ProductCard";
@@ -35,24 +35,8 @@ const Silders = styled.div`
 
 const ProductCarousel = ({ imagUrl, title, products }) => {
   const [slideIndex, setSlideIndex] = useState(0);
-  const [innerWidth, setInnerWidth] = useState(0);
-  const [scrollWidth, setScrollWidth] = useState(0);
-  const innerRef = useRef(null);
 
-  useEffect(() => {
-    setInnerWidth(innerRef.current.getBoundingClientRect());
-    setScrollWidth(innerRef.current.scrollLeft);
-  }, [slideIndex]);
-  console.log(innerWidth);
   const handleClick = () => {
-    // if (innerWidth === scrollWidth) return;
-    // currentW += 200;
-    console.log("inner ", Math.round(innerWidth.right));
-    console.log("outer ", scrollWidth);
-
-    // if (innerWidth.right < outerWidth.right) {
-    //   console.log("hi");
-    // }
     setSlideIndex(slideIndex < 5 ? slideIndex + 1 : 0);
   };
 
@@ -89,7 +73,7 @@ const ProductCarousel = ({ imagUrl, title, products }) => {
         </Box>
       </Box>
       <Wrapper>
-        <Silders ref={innerRef} slideIndex={slideIndex}>
+        <Silders slideIndex={slideIndex}>
           {products.map((items, index) => (
             <ProductCard
               key={index}

@@ -241,15 +241,18 @@ const Navigation = ({ window }) => {
             >
               {NavItems.map((item, index) => (
                 <MenuItem key={index} onClick={handleCloseUserMenu}>
-                  <Typography
-                    sx={{
-                      textAlign: "center",
-                      textTransform: "uppercase",
-                      padding: "15px 10px",
-                    }}
-                  >
-                    {item}
-                  </Typography>
+                  <Link to="#" style={{ textDecoration: "none" }}>
+                    <Typography
+                      sx={{
+                        textAlign: "center",
+                        textTransform: "uppercase",
+                        padding: "15px 10px",
+                        color: "black",
+                      }}
+                    >
+                      {item}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>

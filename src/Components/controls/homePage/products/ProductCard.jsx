@@ -34,7 +34,6 @@ const ProductCard = ({ imageUrl, title, price }) => {
             }}
           >
             <AddControlBtn />
-            <AddBtn />
           </Box>
         </CardContent>
       </Box>

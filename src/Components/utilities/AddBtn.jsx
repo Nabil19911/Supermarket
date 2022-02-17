@@ -1,8 +1,12 @@
 import { Button } from "@mui/material";
 import React from "react";
 
-const AddBtn = () => {
-  return <Button sx={{ color: "black", fontWeight: 700 }}>Add</Button>;
+const AddBtn = ({ onClick }) => {
+  return (
+    <Button sx={{ color: "black", fontWeight: 700 }} onClick={onClick}>
+      Add
+    </Button>
+  );
 };
 
 export default AddBtn;
