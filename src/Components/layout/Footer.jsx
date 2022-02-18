@@ -30,7 +30,7 @@ const Footer = () => {
           <Heading>Categories</Heading>
           <ul style={{ listStyle: "none" }}>
             <CustomLink to="#">Grocery</CustomLink>
-            <CustomLink to="#">fresg food</CustomLink>
+            <CustomLink to="#">fresh food</CustomLink>
             <CustomLink to="#">electronics</CustomLink>
             <CustomLink to="#">mobiles</CustomLink>
             <CustomLink to="#">home & living</CustomLink>
