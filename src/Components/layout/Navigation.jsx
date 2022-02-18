@@ -63,7 +63,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const NavItems = [
   "Grocery",
-  "fresg food",
+  "fresh food",
   "electronics",
   "mobiles",
   "home & living",
