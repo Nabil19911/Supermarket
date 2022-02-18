@@ -22,7 +22,7 @@ const Arrows = props => {
     <Box
       sx={{
         display: props.isMobile ? "flex" : "none",
-        justifyContent: "space-evenly",
+        justifyContent: "space-between",
         width: "100px",
       }}
     >
@@ -81,6 +81,7 @@ class CustomArrowCarousel extends Component {
             container
             alignItems={"center"}
             justifyContent={{ xs: "center", sm: "space-between" }}
+            pt="15px"
           >
             <Heading>Deal of the day</Heading>
             <Arrows

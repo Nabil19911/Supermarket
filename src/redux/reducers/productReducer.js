@@ -1,7 +1,13 @@
 import { ActionTypes } from "../contants/action-type";
 
 const initialState = {
-  product: [],
+  product: [
+    {
+      product: "",
+      Price: "",
+      quantity: 0,
+    },
+  ],
 };
 
 export const productReducer = (state = initialState, { type, payload }) => {

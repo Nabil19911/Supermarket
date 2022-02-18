@@ -2,14 +2,23 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
-import { Heading, Section } from "../../../styleControl";
+import { Heading, Section, ViewMore } from "../../../styleControl";
 import { Buy } from "../../../utilities/";
 
 const WhatsNewSection = () => {
   const isMobile = useMediaQuery({ maxWidth: "500px" });
   return (
     <Section>
-      <Heading>What's New</Heading>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: { xs: "center", md: "space-between" },
+        }}
+      >
+        <Heading>What's New</Heading>
+        {isMobile || <ViewMore to="#" />}
+      </Box>
       <Box
         mt="150px"
         sx={{
@@ -71,6 +80,7 @@ const WhatsNewSection = () => {
           />
         </Box>
       </Box>
+      {isMobile && <ViewMore to="#" />}
     </Section>
   );
 };
