@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ProductCard from "./ProductCard";
 import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+
+import ProductCard from "./ProductCard";
 
 const Container = styled.div`
   display: flex;
@@ -17,7 +18,6 @@ const Arrow = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 0 15px 15px 0;
-  /* backdrop-filter: blur(40px); */
   &:hover {
     background: #7baf3cc3;
   }

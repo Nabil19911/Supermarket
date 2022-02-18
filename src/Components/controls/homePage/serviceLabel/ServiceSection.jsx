@@ -1,6 +1,4 @@
 import { Box } from "@mui/material";
-import React from "react";
-import { Section } from "../../../styleControl";
 
 const ServiceSection = () => {
   return (

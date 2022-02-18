@@ -1,5 +1,4 @@
 import { Typography } from "@mui/material";
-import React from "react";
 import AlbumIcon from "@mui/icons-material/Album";
 import { useMediaQuery } from "react-responsive";
 

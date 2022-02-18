@@ -1,5 +1,6 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { AddBtn, AddControlBtn } from "../../../utilities";
+
+import { AddControlBtn } from "../../../utilities";
 
 const ProductCard = ({ imageUrl, title, price }) => {
   return (
@@ -23,7 +24,7 @@ const ProductCard = ({ imageUrl, title, price }) => {
           <Typography sx={{ textTransform: "capitalize", fontWeight: 700 }}>
             {title}
           </Typography>
-          <Typography>${price}</Typography>
+          <Typography>Rs.{price}</Typography>
           <Box
             sx={{
               display: "flex",

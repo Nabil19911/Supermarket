@@ -33,10 +33,19 @@ const DealCard = () => {
             sx={{
               textTransform: "uppercase",
               fontWeight: 700,
-              fontSize: "15px",
+              fontSize: "12px",
             }}
           >
             Elvive Shampo
+          </Typography>
+          <Typography
+            sx={{
+              textTransform: "uppercase",
+              fontWeight: 500,
+              fontSize: "12px",
+            }}
+          >
+            Rs. 250
           </Typography>
           <Box mt="10px">
             <AddControlBtn />

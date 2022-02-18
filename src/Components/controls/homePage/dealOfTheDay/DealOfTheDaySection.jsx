@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Box, Grid } from "@mui/material";
-
 import Slider from "react-slick";
+
 import { settings } from "./CarouselSetting";
 import { Heading, Section } from "../../../styleControl";
 import { LeftArrow, RightArrow } from "../../../utilities";
@@ -9,7 +9,6 @@ import DealCard from "./DealCard";
 
 class CustomSlide extends React.Component {
   render() {
-    const { children } = this.props;
     return (
       <Box sx={{ padding: "5px" }}>
         <DealCard />
@@ -101,10 +100,10 @@ class CustomArrowCarousel extends Component {
             }}
           >
             <Slider ref={c => (this.slider = c)} {...settings}>
-              <CustomSlide>1</CustomSlide>
-              <CustomSlide>2</CustomSlide>
-              <CustomSlide>3</CustomSlide>
-              <CustomSlide>4</CustomSlide>
+              <CustomSlide />
+              <CustomSlide />
+              <CustomSlide />
+              <CustomSlide />
             </Slider>
             <Box
               sx={{
