@@ -36,7 +36,7 @@ const DealCard = () => {
               fontSize: "12px",
             }}
           >
-            Elvive Shampo
+            Elvive shampoo
           </Typography>
           <Typography
             sx={{
