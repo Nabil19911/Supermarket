@@ -74,7 +74,7 @@ class CustomArrowCarousel extends Component {
         <Box
           sx={{
             background: "white",
-            padding: "30px",
+            padding: { xs: "40px auto", sm: "30px" },
             borderRadius: "15px",
           }}
         >

@@ -14,6 +14,7 @@ const Heading = ({ children }) => {
         fontWeight: 600,
         textTransform: "uppercase",
         textAlign: { xs: "center", sm: "left" },
+        paddingTop: { xs: "25px", sm: "auto" },
       }}
     >
       <AlbumIcon sx={{ color: "#00DD6C", fontSize: 15 }} /> {children}{" "}

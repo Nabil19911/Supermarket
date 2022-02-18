@@ -20,6 +20,7 @@ const Footer = () => {
         sx={{
           display: "flex",
           justifyContent: "space-evenly",
+          alignItems: "flex-start",
           width: "100%",
           marginBottom: "25px",
           flexWrap: "wrap",
@@ -36,8 +37,16 @@ const Footer = () => {
             <CustomLink to="#">lifestyle</CustomLink>
           </ul>
         </Box>
-        <Box>
-          <Box mb="15px">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            flexWrap: "wrap",
+          }}
+        >
+          <Box>
             <Heading>useful links</Heading>
             <ul style={{ listStyle: "none" }}>
               <CustomLink to="#">About us</CustomLink>
@@ -45,18 +54,30 @@ const Footer = () => {
               <CustomLink to="#">FAQ</CustomLink>
             </ul>
           </Box>
-          <Box>
-            <Heading>Payment methods</Heading>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              flexWrap: "wrap",
+            }}
+          >
+            <Heading>Payment</Heading>
             <img src="\images\PMIcon.png" alt="Payment" />
           </Box>
         </Box>
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            textAlign: "center",
+            marginTop: { xs: "15px", sm: "0" },
+          }}
+        >
           <Heading>Service section</Heading>
           <Box>
             <ServiceSection />
-            {/* <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" /> */}
           </Box>
         </Box>
       </Box>

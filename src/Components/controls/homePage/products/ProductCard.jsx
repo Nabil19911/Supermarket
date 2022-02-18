@@ -5,7 +5,7 @@ const ProductCard = ({ imageUrl, title, price }) => {
   return (
     <Card
       sx={{
-        minWidth: "200px",
+        minWidth: { xs: "195px", sm: "200px" },
         height: "400px",
         boxShadow: "none",
         border: "1px solid rgba(0, 0, 0, 0.2)",

@@ -248,6 +248,7 @@ const Navigation = ({ window }) => {
                         textTransform: "uppercase",
                         padding: "15px 10px",
                         color: "black",
+                        fontWeight: 700,
                       }}
                     >
                       {item}

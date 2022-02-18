@@ -3,7 +3,7 @@ import HeroCarousel from "./HeroCarousel";
 
 const HeroSection = () => {
   return (
-    <Box sx={{ background: "#F5F5F5" }} mt="-30px">
+    <Box sx={{ background: "#7baf3c71" }} mt="-30px">
       <HeroCarousel />
     </Box>
   );

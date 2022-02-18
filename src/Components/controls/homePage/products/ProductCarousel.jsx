@@ -17,6 +17,7 @@ const Arrow = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 0 15px 15px 0;
+  /* backdrop-filter: blur(40px); */
   &:hover {
     background: #7baf3cc3;
   }
@@ -45,7 +46,7 @@ const ProductCarousel = ({ imagUrl, title, products }) => {
       <Box
         sx={{
           backgroundImage: `url(${imagUrl})`,
-          minWidth: "170px",
+          minWidth: { xs: "150px", sm: "170px" },
           height: "400px",
           borderRadius: "15px 0 0 15px",
         }}
