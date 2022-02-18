@@ -23,8 +23,8 @@ const WhatsNewSection = () => {
         <ItemBox
           size={isMobile ? "270px" : "550px"}
           imgUrl="\images\WhatsNew\new1.png"
-          h1="product title"
-          text="lorems"
+          h1="smart watch"
+          text={5000}
           fontSize={isMobile ? "20px" : "30px"}
           imageSize={isMobile ? "200px" : "400px"}
         />
@@ -40,32 +40,32 @@ const WhatsNewSection = () => {
           <ItemBox
             size="265px"
             imgUrl="\images\WhatsNew\new2.png"
-            h1="product title"
-            text="lorems"
+            h1="headphones"
+            text={3000}
             fontSize="20px"
             imageSize="200px"
           />
           <ItemBox
             size="265px"
             imgUrl="\images\WhatsNew\new3.png"
-            h1="product title"
-            text="lorems"
+            h1="digital alarm"
+            text={1500}
             fontSize="20px"
             imageSize="200px"
           />
           <ItemBox
             size="265px"
             imgUrl="\images\WhatsNew\new4.png"
-            h1="product title"
-            text="lorems"
+            h1="smart phone"
+            text={70000}
             fontSize="20px"
             imageSize="200px"
           />
           <ItemBox
             size="265px"
             imgUrl="\images\WhatsNew\new5.png"
-            h1="product title"
-            text="lorems"
+            h1="smart phone"
+            text={60000}
             fontSize="20px"
             imageSize="200px"
           />
@@ -111,7 +111,7 @@ const ItemBox = ({ size, imgUrl, h1, text, fontSize, imageSize }) => {
             }}
             mb="10px"
           >
-            {text}
+            Rs.{text.toLocaleString()}
           </Typography>
           <Buy />
         </Box>
