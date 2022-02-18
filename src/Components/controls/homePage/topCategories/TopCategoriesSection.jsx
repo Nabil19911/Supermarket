@@ -46,7 +46,7 @@ const TopCategoriesSection = () => {
               mt="15px"
               sx={{ textTransform: "uppercase", fontWeight: 600 }}
             >
-              electornics
+              electronics
             </Typography>
           </Box>
           <Box sx={{ marginBottom: { xs: "15px", lg: 0 } }}>
