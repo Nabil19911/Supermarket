@@ -73,6 +73,11 @@ const NavItems = [
 const Navigation = ({ window }) => {
   const isMobile = useMediaQuery({ maxWidth: "500px" });
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const [userSearch, setUserSearch] = useState("");
+
+  const handleChange = event => {
+    setUserSearch(event.target.value);
+  };
 
   const handleOpenUserMenu = event => {
     setAnchorElUser(event.currentTarget);
@@ -139,6 +144,8 @@ const Navigation = ({ window }) => {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              onChange={handleChange}
+              value={userSearch}
             />
           </Search>
         )}
@@ -200,6 +207,8 @@ const Navigation = ({ window }) => {
                     <StyledInputBase
                       placeholder="Search…"
                       inputProps={{ "aria-label": "search" }}
+                      onChange={handleChange}
+                      value={userSearch}
                     />
                   </Search>
                 </Slide>
