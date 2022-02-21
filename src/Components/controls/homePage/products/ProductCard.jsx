@@ -15,7 +15,7 @@ const ProductCard = ({ imageUrl, title, price }) => {
     >
       <CardMedia
         component="img"
-        sx={{ width: "200px", padding: "20px" }}
+        sx={{ width: "200px", minWidth: "200px", padding: "20px" }}
         image={imageUrl}
         alt={title}
       />
