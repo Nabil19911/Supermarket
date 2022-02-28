@@ -1,22 +1,48 @@
 export const settings = {
   dots: false,
   infinite: true,
-  speed: 500,
-  slidesToShow: 3,
+  slidesToShow: 2,
   slidesToScroll: 1,
-  initialSlide: 0,
-  centerPadding: "0",
+  initialSlide: 1,
+  centerPadding: "420px",
+  speed: 500,
   centerMode: true,
-  adaptiveHeight: true,
+  adaptiveHeight: false,
   responsive: [
+    {
+      breakpoint: 1280,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        centerPadding: "0px",
+      },
+    },
     {
       breakpoint: 1024,
       settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        centerPadding: "150px",
+      },
+    },
+    {
+      breakpoint: 889,
+      settings: {
         slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 0,
-        centerMode: true,
-        centerPadding: "0px",
+        slidesToScroll: 1,
+        initialSlide: 1,
+        centerPadding: "200px",
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        centerPadding: "130px",
       },
     },
     {
@@ -34,7 +60,7 @@ export const settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         speed: 800,
-        centerPadding: "17px",
+        centerPadding: "100px",
       },
     },
     {
@@ -43,7 +69,25 @@ export const settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         speed: 800,
-        centerPadding: "0px",
+        centerPadding: "100px",
+      },
+    },
+    {
+      breakpoint: 375,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 800,
+        centerPadding: "70px",
+      },
+    },
+    {
+      breakpoint: 320,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 800,
+        centerPadding: "50px",
       },
     },
   ],

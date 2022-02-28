@@ -20,13 +20,12 @@ const WhatsNewSection = () => {
         {isMobile || <ViewMore to="#" />}
       </Box>
       <Box
-        mt="150px"
         sx={{
           display: "flex",
           flexDirection: { xs: "column", lg: "row" },
           alignItems: "center",
           justifyContent: "space-around",
-          rowGap: 15,
+          marginTop: { xs: "100px", sm: "200px", md: "170px" },
         }}
       >
         <ItemBox
@@ -42,7 +41,6 @@ const WhatsNewSection = () => {
             display: "flex",
             flexWrap: "wrap",
             gap: 2,
-            rowGap: 15,
             justifyContent: "space-around",
           }}
         >
@@ -87,7 +85,7 @@ const WhatsNewSection = () => {
 
 const ItemBox = ({ size, imgUrl, h1, text, fontSize, imageSize }) => {
   return (
-    <Box sx={{ height: { xs: size, sm: "270px", lg: "auto" } }}>
+    <Box sx={{ height: { xs: size, sm: "280px", lg: "auto" } }}>
       <Box
         sx={{
           minWidth: size,

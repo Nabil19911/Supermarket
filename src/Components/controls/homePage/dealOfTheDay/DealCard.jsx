@@ -6,17 +6,14 @@ const DealCard = () => {
   return (
     <Card
       sx={{
-        maxWidth: "350px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
+        maxWidth: "180px",
         padding: "15px",
         background: "#fddc6775",
       }}
     >
       <CardMedia
         component="img"
-        sx={{ width: 151 }}
+        sx={{ width: "100%" }}
         image="\images\DealOfTheDay\elvive.png"
         alt="Elvive Shampo"
       />

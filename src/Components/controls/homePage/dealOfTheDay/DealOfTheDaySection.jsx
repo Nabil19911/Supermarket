@@ -92,10 +92,7 @@ class CustomArrowCarousel extends Component {
           </Grid>
           <Box
             sx={{
-              width: {
-                sm: "100%",
-                md: "90%",
-              },
+              width: "100%",
               margin: " 50px auto auto auto",
               maxWidth: "1230px",
             }}
